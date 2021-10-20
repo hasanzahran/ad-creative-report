@@ -22,4 +22,4 @@ To Start Server:
 `yarn start`  
 
 App:
-`localhost:3000/ideas`
+`http://localhost:3000/`
