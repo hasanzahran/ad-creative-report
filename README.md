@@ -9,7 +9,7 @@ Prototype
 
 ## Live Application URL
 
-The Application is deployed in https://hasanzahran.github.io/ad-creative-report
+The Application is deployed in https://ad-creative-report-2-ofekc.ondigitalocean.app/
 
 ## Installation and Setup Instructions
 
