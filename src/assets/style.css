@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  overflow-y: hidden;
+  background: #ebebeb;
+  color: #999999;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 100px 5px;
+}
+.flex {
+  display: flex;
+}
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.cards, .iframe-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+.cards {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.cards__item {
+  margin: 0 20px;
+}
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  overflow: hidden;
+  width: 350px;
+}
+.card:hover .card__image {
+  filter: contrast(100%);
+}
+.card__content {
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+.card__image::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+.options-view > div {
+  margin-bottom: 10px;
+  margin-left: 15px;
+  font-size: 18px;
+}
+.options-view > div:hover {
+  cursor: pointer;
+}
+.options-view > div.active  {
+  text-shadow:0px 0px 1px rgb(0, 132, 255);
+}
+.iframe-card {
+  margin: 5px;
+}
+.btns {
+  justify-content: space-between;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+}
+button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 3px;
+}
+button:hover {
+  cursor: pointer;
+}
+button.success {
+  background-color: #28a745;
+}
+button.warning {
+  background-color: #dc3545;
+}
+button.primary {
+  background-color: #007bff;
+}
+button:disabled.info, button:disabled {
+  background-color: rgb(196, 196, 196) !important;
+  pointer-events: none;
+}
