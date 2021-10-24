@@ -1,6 +1,6 @@
 export const MAIN_URL = `https://platform.pearmill.com/tests`;
 
-export const fixData = (data:any) => {
+export const customizeDaTa = (data:any) => {
     const iframeData = [];
     for (let item in data) {
         let tempObj = {width:null,height:null,src:null};

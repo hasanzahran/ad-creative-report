@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {fixData, MAIN_URL} from "../utils/config";
+import {customizeDaTa, MAIN_URL} from "../utils/config";
 import Iframe from "./Iframe";
 
 type dataType = {
@@ -20,9 +20,8 @@ const List:React.FC = () => {
         setLoading(true);
         try {
             const getData = await fetch(`${MAIN_URL}/creatives`);
-            let response  = await getData.json();
-            let finalData = await response.data;
-            setData(finalData);
+            const {data} = await getData.json();
+            setData(data);
         } catch (err) {
             console.error(err);
         }
@@ -44,8 +43,7 @@ const List:React.FC = () => {
         try {
             const getData = await fetch(`${MAIN_URL}/iframes?ad_ids=${ids.join(",")}&format=${format}`);
             let response  = await getData.json();
-            let iframeSrc = fixData(response.data);
-            setIframeData(iframeSrc);
+            setIframeData(customizeDaTa(response.data));
         } catch (err) {
             console.error(err);
         }
